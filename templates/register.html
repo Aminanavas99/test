@@ -1,0 +1,24 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="post" action="/register/">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="role">Role:</label>
+        <select id="role" name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="moderator">Moderator</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

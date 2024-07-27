@@ -1,0 +1,44 @@
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.name }}</h1>
+    <p>You are logged in as a User.</p>
+    <a href="/logout/">Logout</a>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.name }}</h1>
+    <h2>Your Role: {{ role }}</h2>
+
+    {% if user.profile_picture %}
+        <img src="{{ user.profile_picture.url }}" alt="Profile Picture" width="100" height="100">
+    {% else %}
+        <p>No profile picture set.</p>
+    {% endif %}
+
+    <h3>Set Profile Picture</h3>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <input type="hidden" name="upload_profile_picture" value="true">
+        <button type="submit">Upload</button>
+    </form>
+    <a href="/logout/">Logout</a>
+
+</body>
+</html>
+

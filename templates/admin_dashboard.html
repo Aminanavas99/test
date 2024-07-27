@@ -1,0 +1,29 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <form action="http://127.0.0.1:8000/login/" method="post">
+        <h1>Welcome, {{ user.name }}</h1>
+        <p>You are logged in as an Admin.</p>
+        <button type="submit">submit</button>
+
+    </form>
+    <!-- <h2>Pending Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{{ recipe.title }} by {{ recipe.created_by.name }}
+                <form action="{% url 'approve_recipe' recipe.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">Approve</button>
+                </form>
+            </li>
+        {% endfor %} -->
+    </ul>
+   
+</body>
+</html>
